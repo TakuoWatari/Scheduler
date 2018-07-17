@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.Object?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.beans.property.StringProperty?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scheduler.controller.ScheduleController">
+   <children>
+      <Label fx:id="date" alignment="CENTER" layoutX="10.0" layoutY="10.0" text="YYYY年MM月DD日 (曜日)" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Label text="何の日？（" />
+            <TextField fx:id="event" prefWidth="200.0" />
+            <Label text="）" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <CheckBox fx:id="holidayBox" mnemonicParsing="false" text="休日の場合、チェックを入れてください。" />
+         </children>
+      </HBox>
+      <Label text="- 予定 -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="90.0" />
+      <Button mnemonicParsing="false" onAction="#addTask" text="追加" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0" />
+      <Button mnemonicParsing="false" onAction="#deleteTask" text="削除" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
+      <TableView fx:id="plan" editable="true" prefHeight="300.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="105.0">
+        <columns>
+          <TableColumn fx:id="contentColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editNameCommited" prefWidth="350.0" resizable="true" sortable="true" text="内容">
+            <cellValueFactory>
+              <PropertyValueFactory property="content" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="optionColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editCommentCommited" prefWidth="350.0" resizable="true" sortable="true" text="備考">
+            <cellValueFactory>
+              <PropertyValueFactory property="option" />
+            </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <Label text="- メモ -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="415.0" />
+      <TextArea fx:id="memo" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="430.0" />
+      <Button mnemonicParsing="false" onAction="#closeWindow" text="閉じる" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0" />
+   </children>
+</AnchorPane>

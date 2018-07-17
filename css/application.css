@@ -1,0 +1,84 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root {
+     -fx-font-family: 'Meiryo UI';
+     -fx-font-size:  9pt;
+}
+
+.label {
+	-fx-alignment: center;
+}
+
+.button {
+	-fx-text-alignment: center;
+	-fx-pref-width: 50px;
+}
+.tooltip {
+	-fx-background-color: linear-gradient(#e2ecfe, #99bcfd);
+	-fx-text-fill: black;
+}
+.page-corner {
+	-fx-background-color: linear-gradient(from 0% 0% to 50% 50%,#3278fa,#99bcfd);
+}
+.number-cloumn {
+	-fx-alignment: top-right;
+}
+
+.text-field:readonly {
+    -fx-background-color : lightgray;
+}
+
+.header {
+	-fx-background-color: linear-gradient(to right, derive(lightgray, 50%), lightgray);
+	-fx-alignment: center;
+	-fx-font-weight: bold;
+}
+
+.body {
+	-fx-alignment: top-left;
+}
+.body:hover {
+	-fx-alignment: top-left;
+    -fx-background-color: royalblue ;
+    -fx-text-fill: white;
+}
+.sunday {
+	-fx-background-color: blanchedalmond;
+	-fx-text-fill: red;
+}
+.saturday {
+	-fx-background-color: paleturquoise;
+	-fx-text-fill: blue;
+}
+
+.holiday {
+	-fx-background-color: blanchedalmond;
+	-fx-text-fill: red;
+}
+
+.today {
+	-fx-background-color: gold;
+	-fx-text-fill: black;
+}
+
+.none {
+	-fx-background-color: lightyellow;
+}
+
+#searchYear {
+	-fx-pref-width: 70px;
+}
+#searchMonth {
+	-fx-pref-width: 50px;
+}
+#dispYearMonth {
+	-fx-font-size: 20pt;
+}
+#calendar {
+	-fx-background-color: white;
+	-fx-grid-lines-visible: true;
+}
+#message {
+	-fx-alignment: center-left ;
+	-fx-pref-height: 20px;
+	-fx-background-color: white;
+}
