@@ -1,12 +1,11 @@
-package application.scheduler;
+package application;
 
 import java.net.URL;
 
+import application.util.ApplicationUtil;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.stage.StageStyle;
-import application.ApplicationEx;
-import application.util.ApplicationUtil;
 
 public class Scheduler extends ApplicationEx {
 

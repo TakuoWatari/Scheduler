@@ -11,40 +11,40 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.beans.property.StringProperty?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scheduler.controller.ScheduleController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ScheduleController">
    <children>
-      <Label fx:id="date" alignment="CENTER" layoutX="10.0" layoutY="10.0" text="YYYY年MM月DD日 (曜日)" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+      <Label fx:id="date" alignment="CENTER" layoutX="10.0" layoutY="10.0" text="YYYY年MM月DD日 (曜日)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="35.0">
          <children>
-            <Label text="何の日？（" />
-            <TextField fx:id="event" prefWidth="200.0" />
+            <CheckBox fx:id="holidayBox" mnemonicParsing="false" text="休日" onAction="#holidayChanged" />
+            <Label text="（" />
+            <TextField fx:id="holidayName" prefWidth="200.0" />
             <Label text="）" />
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="65.0">
-         <children>
-            <CheckBox fx:id="holidayBox" mnemonicParsing="false" text="休日の場合、チェックを入れてください。" />
-         </children>
-      </HBox>
-      <Label text="- 予定 -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="90.0" />
-      <Button mnemonicParsing="false" onAction="#addTask" text="追加" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0" />
-      <Button mnemonicParsing="false" onAction="#deleteTask" text="削除" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
-      <TableView fx:id="plan" editable="true" prefHeight="300.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="105.0">
+      <Label text="- タスク一覧 -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="65.0" />
+      <Button mnemonicParsing="false" onAction="#addTask" text="追加" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="65.0" />
+      <Button mnemonicParsing="false" onAction="#deleteTask" text="削除" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0" />
+      <TableView fx:id="schedule" editable="true" prefHeight="300.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
         <columns>
-          <TableColumn fx:id="contentColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editNameCommited" prefWidth="350.0" resizable="true" sortable="true" text="内容">
+          <TableColumn fx:id="nameColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editNameCommited" prefWidth="350.0" resizable="true" sortable="true" text="タスク">
             <cellValueFactory>
-              <PropertyValueFactory property="content" />
+              <PropertyValueFactory property="name" />
             </cellValueFactory>
           </TableColumn>
-          <TableColumn fx:id="optionColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editCommentCommited" prefWidth="350.0" resizable="true" sortable="true" text="備考">
+          <TableColumn fx:id="commentColumn" editable="true" maxWidth="400.0" minWidth="300.0" onEditCommit="#editCommentCommited" prefWidth="350.0" resizable="true" sortable="true" text="備考">
             <cellValueFactory>
-              <PropertyValueFactory property="option" />
+              <PropertyValueFactory property="comment" />
             </cellValueFactory>
           </TableColumn>
         </columns>
       </TableView>
-      <Label text="- メモ -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="415.0" />
-      <TextArea fx:id="memo" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="430.0" />
+      <Label text="- メモ -" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="400.0" />
+      <TextArea fx:id="memo" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="420.0" />
       <Button mnemonicParsing="false" onAction="#closeWindow" text="閉じる" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0" />
    </children>
 </AnchorPane>

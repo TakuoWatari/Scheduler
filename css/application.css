@@ -1,84 +1,93 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .root {
      -fx-font-family: 'Meiryo UI';
-     -fx-font-size:  9pt;
+     -fx-font-size:  10pt;
 }
 
-.label {
-	-fx-alignment: center;
-}
-
-.button {
-	-fx-text-alignment: center;
-	-fx-pref-width: 50px;
-}
-.tooltip {
-	-fx-background-color: linear-gradient(#e2ecfe, #99bcfd);
-	-fx-text-fill: black;
-}
-.page-corner {
-	-fx-background-color: linear-gradient(from 0% 0% to 50% 50%,#3278fa,#99bcfd);
-}
 .number-cloumn {
 	-fx-alignment: top-right;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: lightyellow;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.border-pane {
+    -fx-border-color: black ;
+    -fx-border-width: 0.3px;
 }
 
 .text-field:readonly {
     -fx-background-color : lightgray;
 }
 
-.header {
-	-fx-background-color: linear-gradient(to right, derive(lightgray, 50%), lightgray);
-	-fx-alignment: center;
-	-fx-font-weight: bold;
+.chart-plot-background {
+    -fx-background-color: white;
 }
 
-.body {
-	-fx-alignment: top-left;
+.table-column {
+    -fx-border-color: black ;
+    -fx-border-width: 0.1px;
 }
-.body:hover {
-	-fx-alignment: top-left;
+
+.satureday-column-cell:filled {
+    -fx-background-color: paleturquoise;
+    -fx-text-fill: blue;
+}
+
+.satureday-column-cell:selected {
     -fx-background-color: royalblue ;
     -fx-text-fill: white;
 }
-.sunday {
-	-fx-background-color: blanchedalmond;
-	-fx-text-fill: red;
-}
-.saturday {
-	-fx-background-color: paleturquoise;
-	-fx-text-fill: blue;
+
+.sunday-column-cell:filled {
+    -fx-background-color: blanchedalmond;
+    -fx-text-fill: red;
 }
 
-.holiday {
-	-fx-background-color: blanchedalmond;
-	-fx-text-fill: red;
+.sunday-column-cell:selected {
+    -fx-background-color: royalblue ;
+    -fx-text-fill: white;
 }
 
-.today {
-	-fx-background-color: gold;
-	-fx-text-fill: black;
+.holiday-column-cell:filled {
+    -fx-background-color: blanchedalmond;
+    -fx-text-fill: red;
 }
 
-.none {
-	-fx-background-color: lightyellow;
+.holiday-column-cell:selected {
+    -fx-background-color: royalblue ;
+    -fx-text-fill: white;
 }
 
-#searchYear {
-	-fx-pref-width: 70px;
+.today-column-cell:filled {
+    -fx-background-color: gold;
+    -fx-text-fill: black;
 }
-#searchMonth {
-	-fx-pref-width: 50px;
+
+.today-column-cell:selected {
+    -fx-background-color: royalblue ;
+    -fx-text-fill: white;
 }
-#dispYearMonth {
-	-fx-font-size: 20pt;
+
+.weekday-column-cell:filled {
+    -fx-background-color: white ;
+    -fx-text-fill: black;
 }
-#calendar {
-	-fx-background-color: white;
-	-fx-grid-lines-visible: true;
+
+.weekday-column-cell:selected {
+    -fx-background-color: royalblue ;
+    -fx-text-fill: white;
 }
-#message {
-	-fx-alignment: center-left ;
-	-fx-pref-height: 20px;
-	-fx-background-color: white;
+
+.none-column-cell:filled {
+    -fx-background-color: whitesmoke ;
+}
+
+.none-column-cell:selected {
+    -fx-background-color: royalblue ;
 }
